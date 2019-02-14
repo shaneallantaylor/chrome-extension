@@ -1,13 +1,13 @@
 {
-  "name": "CHANGE THIS : Extension boilerplate",
-  "version": "0.0.1",
+  "name": "Codesanity",
+  "version": "10.8",
   "manifest_version": 2,
-  "description": "This extension was created with the awesome extensionizr.com",
-  "homepage_url": "http://extensionizr.com",
+  "description": "An extension for people who go home before midnight at the Codesmith Hackathon",
+  "homepage_url": "http://codesmith.com",
   "icons": {
-    "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
+    "19": "icons/cs19.png",
+    "48": "icons/cs48.png",
+    "128": "icons/cs128.png"
   },
   "default_locale": "en",
   "background": {
@@ -18,7 +18,7 @@
   },
   "options_page": "src/options_custom/index.html",
   "browser_action": {
-    "default_icon": "icons/icon19.png",
+    "default_icon": "icons/cs19.png",
     "default_title": "browser action demo",
     "default_popup": "src/browser_action/browser_action.html"
   },
@@ -28,13 +28,13 @@
     "management",
     "notifications",
     "tabs",
-    "https://*",
-    " http://*"
+    "activeTab",
+    "*://*/*"
   ],
   "content_scripts": [
     {
       "matches": [
-        "https://www.google.com/*"
+        "*://*/*"
       ],
       "css": [
         "src/inject/inject.css"
@@ -42,7 +42,7 @@
     },
     {
       "matches": [
-        "https://www.google.com/*"
+        "*://*/*"
       ],
       "js": [
         "src/inject/inject.js"

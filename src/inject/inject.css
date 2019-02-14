@@ -1,3 +1,143 @@
-/**
- * Place your custom CSS styles here.
- **/
+#codesanity {
+  font-family: sans-serif;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: -100vh;
+  right: -100vw;
+  z-index: 100000000;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: center;
+  transition: all 2s ease;
+  overflow: hidden;
+  background: linear-gradient(-45deg,#ccc,#67a6c4,#ccc,#4b8a7f,#ccc);
+  background-size: 400% 400%;
+  animation: Gradient 40s ease infinite;
+}
+#codesanity.on {
+  top: 0px;
+  right: 0px;
+}
+
+main {
+  height: 16em;
+  order: 2;
+  width: 30%;
+}
+
+main blockquote {
+  font-size: 2em;
+  font-family: Neuzit, sans-serif;
+  font-weight: 400;
+  color: #7C7277;
+  margin: 20px auto;
+  text-align: center;
+  padding: 0;
+  quotes: "“" "”" "‘" "’";
+  line-height: 1.5em;
+  letter-spacing: 2px;
+}
+
+main blockquote:before {
+    content: open-quote;
+}
+main blockquote:after {
+      content: close-quote;
+}
+
+cite {
+  padding-top: 10px;
+  height: 50px;
+  font-size: 1.5em;
+  font-weight: 600;
+  font-family: Neuzit, sans-serif;
+  float: right;
+  color: #601F39;
+  margin-right: 10px;
+  margin-top: 10px;
+  font-style: normal;
+}
+
+.photo {
+  height: 70px;
+  width: 70px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 70px;
+  float:right;
+  margin-right:12px;
+  border: 2px solid #fff;
+}
+
+.photo.will {
+  background-image: url('https://www.codesmith.io/776f4f5a8633054d9c3eb9aa925c73fe.jpg');
+}
+
+.photo.schno {
+  background-image: url("https://www.codesmith.io/6ddb831b068eaa1c382f80e97a409a22.jpg");
+}
+
+.photo.samg {
+  background-image: url("https://www.codesmith.io/24325bdd7204520b4e2060996689bd6b.jpg");
+}
+
+.photo.sams {
+  background-image: url("https://www.codesmith.io/451313f87ad6d77ac7623386fc55a95c.jpg");
+}
+
+.photo.ryan {
+  background-image: url("https://www.codesmith.io/57abb9ffe064bc89986fa15c5cbd0a31.jpg");
+}
+
+#countdown {
+/*   font-family: sans-serif; */
+  font-size: 100px;
+/*   height: 100px; */
+  width: 100%;
+  text-align: center;
+}
+
+.minutes {
+/*   height: 100px; */
+/*   width: 50px; */
+/*   background: blue; */
+  display: inline-block;
+}
+
+.seconds {
+/*   height: 100px;
+  width: 50px; */
+/*   background: yellow; */
+  display: inline-block;
+}
+
+@keyframes Gradient {
+    0% {
+        background-position: 0 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    to {
+        background-position: 0 50%
+    }
+}
+
+@keyframes GradientText {
+    0% {
+        background-position: 0 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    to {
+        background-position: 0 50%
+    }
+}
