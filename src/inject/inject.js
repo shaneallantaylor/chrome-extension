@@ -3,6 +3,8 @@ chrome.extension.sendMessage({}, function (response) {
 		if (document.readyState === "complete") {
 			clearInterval(readyStateCheckInterval);
 
+			var myAudio = new Audio(chrome.runtime.getURL("assets/meditation.m4a"));
+
 			let quotes = {
 				"Will": "Before your close your eyes every night, take three deep breaths in gratitude for another day closer to graduation.",
 				"Sam G.": "Each and every one of you are champions for working this hard at this hour.",
@@ -22,8 +24,9 @@ chrome.extension.sendMessage({}, function (response) {
 			// splash
 			let splash = document.createElement("div");
 			splash.setAttribute("id", "codesanity");
-			splash.classList.add('on');
+			// splash.classList.add('on');
 			document.body.appendChild(splash);
+			document.body.classList.add('splash');
 
 			// main (quote container)
 			let main = document.createElement("main");
@@ -33,19 +36,23 @@ chrome.extension.sendMessage({}, function (response) {
 			// blockquote
 			let bq = document.createElement("blockquote");
 			bq.innerHTML = quotes[chosenKey];
+			bq.classList.add('cs-bq');
 			document.getElementById('quote-container').appendChild(bq);
 
-			// cite 
-			let cite = document.createElement("cite");
-			let cleanCite = chosenKey.replace(/([\s.])+/g, '').toLowerCase();
-			cite.innerHTML = chosenKey;
-			document.getElementById('quote-container').appendChild(cite);
 
 			// photo div
+			let cleanCite = chosenKey.replace(/([\s.])+/g, '').toLowerCase();
 			let photoDiv = document.createElement('div');
 			photoDiv.classList.add('photo');
 			photoDiv.classList.add(cleanCite);
 			document.getElementById('quote-container').appendChild(photoDiv);
+
+			// cite 
+			let cite = document.createElement("cite");
+			cite.innerHTML = chosenKey;
+			document.getElementById('quote-container').appendChild(cite);
+
+
 
 			// // countdown
 			// let countDown = document.createElement("div");
@@ -66,12 +73,13 @@ chrome.extension.sendMessage({}, function (response) {
 			// This part of the script triggers when page is done loading
 			console.log("Hello. This message was sent from scripts/inject.js");
 			// ----------------------------------------------------------
-			// document.addEventListener("keypress", function (event) {
-			// 	if (event.keyCode == 27 || event.keyCode === 32) {
-			// 		document.getElementById('codesanity').remove();
-			// 	}
-			// })
-			setTimeout(function(){document.getElementById('codesanity').remove()}, 60000)
+			document.addEventListener("keypress", function (event) {
+				if (event.keyCode == 27 || event.keyCode === 32) {
+					myAudio.play();
+				}
+			})
+			window.setTimeout(function () { document.getElementById('codesanity').classList.add('on') }, 1000);
+			setTimeout(function () { document.getElementById('codesanity').remove() }, 60000)
 		}
 
 	}, 4000);

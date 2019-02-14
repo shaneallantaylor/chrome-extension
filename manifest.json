@@ -48,5 +48,13 @@
         "src/inject/inject.js"
       ]
     }
+  ],
+  "web_accessible_resources": [
+    "assets/rt.jpg",
+    "assets/ss.jpg",
+    "assets/sm.jpg",
+    "assets/sg.jpg",
+    "assets/ws.jpg",
+    "assets/meditation.m4a"
   ]
 }

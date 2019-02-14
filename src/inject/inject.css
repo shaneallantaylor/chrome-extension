@@ -1,33 +1,42 @@
+body.splash {
+  overflow: hidden;
+}
+
+
 #codesanity {
-  font-family: sans-serif;
-  position: fixed;
+font-family: sans-serif;
+  position: absolute;
   width: 100%;
   height: 100%;
-  top: -100vh;
-  right: -100vw;
+  top: 0;
+  right: 0;
   z-index: 100000000;
   display: flex;
   flex-flow: wrap;
   justify-content: center;
   align-items: center;
-  transition: all 2s ease;
+  transition: all 2s ease 1s;
   overflow: hidden;
   background: linear-gradient(-45deg,#ccc,#67a6c4,#ccc,#4b8a7f,#ccc);
   background-size: 400% 400%;
   animation: Gradient 40s ease infinite;
+  opacity: 0;
 }
 #codesanity.on {
-  top: 0px;
-  right: 0px;
+  opacity: 1;
+}
+
+#quote-container {
+  border-radius: 8px;
 }
 
 main {
-  height: 16em;
+  /* height: 16em; */
   order: 2;
   width: 30%;
 }
 
-main blockquote {
+main blockquote.cs-bq {
   font-size: 2em;
   font-family: Neuzit, sans-serif;
   font-weight: 400;
@@ -38,6 +47,11 @@ main blockquote {
   quotes: "“" "”" "‘" "’";
   line-height: 1.5em;
   letter-spacing: 2px;
+  background-color: transparent;
+  background: rgba(256, 256, 256, 0.2 );
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 main blockquote:before {
@@ -49,7 +63,7 @@ main blockquote:after {
 
 cite {
   padding-top: 10px;
-  height: 50px;
+  /* height: 70px; */
   font-size: 1.5em;
   font-weight: 600;
   font-family: Neuzit, sans-serif;
@@ -58,6 +72,9 @@ cite {
   margin-right: 10px;
   margin-top: 10px;
   font-style: normal;
+  line-height: 70px;
+  padding-right: 20px;
+  font-size: 16px;
 }
 
 .photo {
@@ -73,23 +90,23 @@ cite {
 }
 
 .photo.will {
-  background-image: url('https://www.codesmith.io/776f4f5a8633054d9c3eb9aa925c73fe.jpg');
+  background-image: url('chrome-extension://ckeagemkpccokmnbcfkmmjnmnnpmnmai/assets/ws.jpg');
 }
 
 .photo.schno {
-  background-image: url("https://www.codesmith.io/6ddb831b068eaa1c382f80e97a409a22.jpg");
+  background-image: url("chrome-extension://ckeagemkpccokmnbcfkmmjnmnnpmnmai/assets/sm.jpg");
 }
 
 .photo.samg {
-  background-image: url("https://www.codesmith.io/24325bdd7204520b4e2060996689bd6b.jpg");
+  background-image: url("chrome-extension://ckeagemkpccokmnbcfkmmjnmnnpmnmai/assets/sg.jpg");
 }
 
 .photo.sams {
-  background-image: url("https://www.codesmith.io/451313f87ad6d77ac7623386fc55a95c.jpg");
+  background-image: url("chrome-extension://ckeagemkpccokmnbcfkmmjnmnnpmnmai/assets/ss.jpg");
 }
 
 .photo.ryan {
-  background-image: url("https://www.codesmith.io/57abb9ffe064bc89986fa15c5cbd0a31.jpg");
+  background-image: url("chrome-extension://ckeagemkpccokmnbcfkmmjnmnnpmnmai/assets/rt.jpg");
 }
 
 #countdown {
